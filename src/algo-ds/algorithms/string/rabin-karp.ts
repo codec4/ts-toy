@@ -23,8 +23,7 @@ const rabinKarp = (text: string, pattern: string) => {
     if (hashCurrentSubstring === undefined) {
       hashCurrentSubstring = hash(currentSubstring);
     } else {
-      hashCurrentSubstring -=
-        currentSubstring.charCodeAt(0) * Math.pow(base, pattern.length - 1);
+      hashCurrentSubstring -= currentSubstring.charCodeAt(0) * Math.pow(base, pattern.length - 1);
       hashCurrentSubstring *= base;
       hashCurrentSubstring += text.charCodeAt(i);
 

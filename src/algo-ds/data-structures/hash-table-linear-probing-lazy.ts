@@ -28,10 +28,7 @@ export default class HashTableLinearProbingLazy<K, V> {
     if (key != null && value != null) {
       const position = this.hashCode(key);
 
-      if (
-        this.table[position] == null ||
-        (this.table[position] != null && this.table[position].isDeleted)
-      ) {
+      if (this.table[position] == null || (this.table[position] != null && this.table[position].isDeleted)) {
         this.table[position] = new ValuePairLazy(key, value);
       } else {
         let index = position + 1;
@@ -53,20 +50,13 @@ export default class HashTableLinearProbingLazy<K, V> {
         return this.table[position].value;
       }
       let index = position + 1;
-      while (
-        this.table[index] != null &&
-        (this.table[index].key !== key || this.table[index].isDeleted)
-      ) {
+      while (this.table[index] != null && (this.table[index].key !== key || this.table[index].isDeleted)) {
         if (this.table[index].key === key && this.table[index].isDeleted) {
           return undefined;
         }
         index++;
       }
-      if (
-        this.table[index] != null &&
-        this.table[index].key === key &&
-        !this.table[index].isDeleted
-      ) {
+      if (this.table[index] != null && this.table[index].key === key && !this.table[index].isDeleted) {
         return this.table[position].value;
       }
     }
@@ -82,17 +72,10 @@ export default class HashTableLinearProbingLazy<K, V> {
         return true;
       }
       let index = position + 1;
-      while (
-        this.table[index] != null &&
-        (this.table[index].key !== key || this.table[index].isDeleted)
-      ) {
+      while (this.table[index] != null && (this.table[index].key !== key || this.table[index].isDeleted)) {
         index++;
       }
-      if (
-        this.table[index] != null &&
-        this.table[index].key === key &&
-        !this.table[index].isDeleted
-      ) {
+      if (this.table[index] != null && this.table[index].key === key && !this.table[index].isDeleted) {
         this.table[index].isDeleted = true;
         return true;
       }
@@ -127,9 +110,7 @@ export default class HashTableLinearProbingLazy<K, V> {
     const keys = Object.keys(this.table);
     let objString = `{${keys[0]} => ${this.table[keys[0]].toString()}}`;
     for (let i = 1; i < keys.length; i++) {
-      objString = `${objString},{${keys[i]} => ${this.table[
-        keys[i]
-      ].toString()}}`;
+      objString = `${objString},{${keys[i]} => ${this.table[keys[i]].toString()}}`;
     }
     return objString;
   }

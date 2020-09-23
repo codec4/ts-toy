@@ -1,11 +1,6 @@
 import { defaultCompare, ICompareFunction, swap } from '../../util';
 
-function heapify(
-  array: any[],
-  index: number,
-  heapSize: number,
-  compareFn: ICompareFunction<any>
-) {
+function heapify(array: any[], index: number, heapSize: number, compareFn: ICompareFunction<any>) {
   let largest = index;
   const left = 2 * index + 1;
   const right = 2 * index + 2;

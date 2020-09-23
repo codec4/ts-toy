@@ -3,7 +3,7 @@ import Graph from '../../data-structures/graph';
 enum Colors {
   WHITE = 0,
   GREY = 1,
-  BLACK = 2,
+  BLACK = 2
 }
 
 const initializeColor = (vertices: (string | number)[]) => {
@@ -14,12 +14,7 @@ const initializeColor = (vertices: (string | number)[]) => {
   return color;
 };
 
-const depthFirstSearchVisit = (
-  u: string | number,
-  color: any,
-  adjList: any,
-  callback: Function
-) => {
+const depthFirstSearchVisit = (u: string | number, color: any, adjList: any, callback: Function) => {
   color[u] = 'grey';
   if (callback) {
     callback(u);
@@ -48,15 +43,7 @@ export const depthFirstSearch = (graph: Graph, callback: Function) => {
   }
 };
 
-const DFSVisit = (
-  u: string | number,
-  color: any,
-  d: any,
-  f: any,
-  p: any,
-  time: any,
-  adjList: any
-) => {
+const DFSVisit = (u: string | number, color: any, d: any, f: any, p: any, time: any, adjList: any) => {
   // console.log('discovered ' + u);
   color[u] = Colors.GREY;
   d[u] = ++time.count;
@@ -97,6 +84,6 @@ export const DFS = (graph: Graph) => {
   return {
     discovery: d,
     finished: f,
-    predecessors: p,
+    predecessors: p
   };
 };

@@ -2,10 +2,7 @@ import Dictionary from './dictionary';
 
 export default class Graph {
   private vertices: (string | number)[] = [];
-  private adjList: Dictionary<
-    string | number,
-    (string | number)[]
-  > = new Dictionary();
+  private adjList: Dictionary<string | number, (string | number)[]> = new Dictionary();
 
   constructor(private isDirected = false) {}
 

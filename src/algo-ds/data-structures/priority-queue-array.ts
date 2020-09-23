@@ -3,10 +3,7 @@ import { Compare, defaultCompare, ICompareFunction } from '../util';
 export default class PriorityQueue<T> {
   private items: T[];
 
-  constructor(
-    private compareFn: ICompareFunction<T> = defaultCompare,
-    private compare: Compare = Compare.LESS_THAN
-  ) {
+  constructor(private compareFn: ICompareFunction<T> = defaultCompare, private compare: Compare = Compare.LESS_THAN) {
     this.items = [];
   }
 

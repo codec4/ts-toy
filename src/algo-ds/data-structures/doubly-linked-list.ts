@@ -22,6 +22,7 @@ export default class DoublyLinkedList<T> extends LinkedList<T> {
       node.prev = this.tail;
       this.tail = node;
     }
+
     this.count++;
   }
 
@@ -55,9 +56,12 @@ export default class DoublyLinkedList<T> extends LinkedList<T> {
         current.prev = node; // NEW
         node.prev = previous; // NEW
       }
+
       this.count++;
+
       return true;
     }
+
     return false;
   }
 
@@ -86,9 +90,12 @@ export default class DoublyLinkedList<T> extends LinkedList<T> {
         previous.next = current.next; // {6}
         current.next.prev = previous; // NEW
       }
+
       this.count--;
+
       return current.element;
     }
+
     return undefined;
   }
 
@@ -100,6 +107,7 @@ export default class DoublyLinkedList<T> extends LinkedList<T> {
       if (this.equalsFn(element, current.element)) {
         return index;
       }
+
       index++;
       current = current.next;
     }
@@ -124,12 +132,15 @@ export default class DoublyLinkedList<T> extends LinkedList<T> {
     if (this.head == null) {
       return '';
     }
+
     let objString = `${this.head.element}`;
     let current = this.head.next;
+
     while (current != null) {
       objString = `${objString},${current.element}`;
       current = current.next;
     }
+
     return objString;
   }
 
@@ -137,12 +148,14 @@ export default class DoublyLinkedList<T> extends LinkedList<T> {
     if (this.tail == null) {
       return '';
     }
+
     let objString = `${this.tail.element}`;
     let previous = this.tail.prev;
     while (previous != null) {
       objString = `${objString},${previous.element}`;
       previous = previous.prev;
     }
+
     return objString;
   }
 }

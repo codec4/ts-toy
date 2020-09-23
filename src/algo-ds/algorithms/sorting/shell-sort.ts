@@ -7,10 +7,7 @@ export function shellSort<T>(array: T[], compareFn = defaultCompare) {
       let j = i;
       const temp = array[i];
 
-      while (
-        j >= increment &&
-        compareFn(array[j - increment], temp) === Compare.BIGGER_THAN
-      ) {
+      while (j >= increment && compareFn(array[j - increment], temp) === Compare.BIGGER_THAN) {
         array[j] = array[j - increment];
         j = j - increment;
       }

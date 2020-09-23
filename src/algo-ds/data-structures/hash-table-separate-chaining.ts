@@ -78,9 +78,7 @@ export default class HashTableSeparateChaining<K, V> {
 
   size() {
     let count = 0;
-    Object.values(this.table).forEach(
-      (linkedList) => (count += linkedList.size())
-    );
+    Object.values(this.table).forEach((linkedList) => (count += linkedList.size()));
     return count;
   }
 
@@ -99,9 +97,7 @@ export default class HashTableSeparateChaining<K, V> {
     const keys = Object.keys(this.table);
     let objString = `{${keys[0]} => ${this.table[keys[0]].toString()}}`;
     for (let i = 1; i < keys.length; i++) {
-      objString = `${objString},{${keys[i]} => ${this.table[
-        keys[i]
-      ].toString()}}`;
+      objString = `${objString},{${keys[i]} => ${this.table[keys[i]].toString()}}`;
     }
     return objString;
   }

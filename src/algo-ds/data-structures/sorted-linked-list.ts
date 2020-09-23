@@ -1,10 +1,4 @@
-import {
-  Compare,
-  defaultCompare,
-  defaultEquals,
-  ICompareFunction,
-  IEqualsFunction,
-} from '../util';
+import { Compare, defaultCompare, defaultEquals, ICompareFunction, IEqualsFunction } from '../util';
 import LinkedList from './linked-list';
 
 export default class SortedLinkedList<T> extends LinkedList<T> {

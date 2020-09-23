@@ -35,9 +35,7 @@ export default class Dictionary<K, V> {
   }
 
   values(): V[] {
-    return this.keyValues().map(
-      (valuePair: ValuePair<K, V>) => valuePair.value
-    );
+    return this.keyValues().map((valuePair: ValuePair<K, V>) => valuePair.value);
   }
 
   keys(): K[] {

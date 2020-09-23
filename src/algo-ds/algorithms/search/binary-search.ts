@@ -1,11 +1,7 @@
 import { Compare, defaultCompare, DOES_NOT_EXIST } from '../../util';
 import { quickSort } from '../sorting/quicksort';
 
-export function binarySearch<T>(
-  array: T[],
-  value: T,
-  compareFn = defaultCompare
-) {
+export function binarySearch<T>(array: T[], value: T, compareFn = defaultCompare) {
   const sortedArray = quickSort(array);
   let low = 0;
   let high = sortedArray.length - 1;

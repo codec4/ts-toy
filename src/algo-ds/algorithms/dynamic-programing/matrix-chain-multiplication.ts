@@ -40,11 +40,7 @@ export function matrixChainOrder(p: number[]): number {
   return m[1][n - 1];
 }
 
-function printOptimalParenthesis(
-  s: Array<Array<number>>,
-  i: number,
-  j: number
-) {
+function printOptimalParenthesis(s: Array<Array<number>>, i: number, j: number) {
   if (i === j) {
     // console.log('A[' + i + ']');
   } else {

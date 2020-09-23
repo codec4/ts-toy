@@ -62,12 +62,7 @@ function usedInCol(grid: Array<Array<number>>, col: number, num: number) {
   return false;
 }
 
-function usedInBox(
-  grid: Array<Array<number>>,
-  boxStartRow: number,
-  boxStartCol: number,
-  num: number
-) {
+function usedInBox(grid: Array<Array<number>>, boxStartRow: number, boxStartCol: number, num: number) {
   for (let row = 0; row < 3; row++) {
     for (let col = 0; col < 3; col++) {
       if (grid[row + boxStartRow][col + boxStartCol] === num) {
@@ -78,15 +73,8 @@ function usedInBox(
   return false;
 }
 
-function isSafe(
-  grid: Array<Array<number>>,
-  row: number,
-  col: number,
-  num: number
-) {
+function isSafe(grid: Array<Array<number>>, row: number, col: number, num: number) {
   return (
-    !usedInRow(grid, row, num) &&
-    !usedInCol(grid, col, num) &&
-    !usedInBox(grid, row - (row % 3), col - (col % 3), num)
+    !usedInRow(grid, row, num) && !usedInCol(grid, col, num) && !usedInBox(grid, row - (row % 3), col - (col % 3), num)
   );
 }

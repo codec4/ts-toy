@@ -15,7 +15,7 @@ class Position {
   public distanceFrom(position: Position) {
     return {
       rank: Math.abs(position.rank - this.rank),
-      file: Math.abs(position.file.charCodeAt(0) - this.file.charCodeAt(0)),
+      file: Math.abs(position.file.charCodeAt(0) - this.file.charCodeAt(0))
     };
   }
 }
@@ -56,7 +56,7 @@ class Game {
     return [
       // Kings
       new King('White', 'E', 1),
-      new King('Black', 'E', 8),
+      new King('Black', 'E', 8)
     ];
   }
 }
@@ -165,5 +165,5 @@ interface User {
 
 let a: User = {
   name: 'Ashley',
-  age: 30,
+  age: 30
 };

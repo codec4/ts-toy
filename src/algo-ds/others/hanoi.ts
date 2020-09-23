@@ -21,32 +21,14 @@ function towerOfHanoi(
     move[destName] = dest.toString();
     moves.push(move);
   } else {
-    towerOfHanoi(
-      plates - 1,
-      source,
-      dest,
-      helper,
-      sourceName,
-      destName,
-      helperName,
-      moves
-    );
+    towerOfHanoi(plates - 1, source, dest, helper, sourceName, destName, helperName, moves);
     dest.push(source.pop());
     const move: any = {};
     move[sourceName] = source.toString();
     move[helperName] = helper.toString();
     move[destName] = dest.toString();
     moves.push(move);
-    towerOfHanoi(
-      plates - 1,
-      helper,
-      source,
-      dest,
-      helperName,
-      sourceName,
-      destName,
-      moves
-    );
+    towerOfHanoi(plates - 1, helper, source, dest, helperName, sourceName, destName, moves);
   }
   return moves;
 }
@@ -63,13 +45,7 @@ export function hanoiStack(plates: number) {
   return towerOfHanoi(plates, source, helper, dest, 'source', 'helper', 'dest');
 }
 
-export function hanoi(
-  plates: number,
-  source: string,
-  helper: string,
-  dest: string,
-  moves: string[][] = []
-) {
+export function hanoi(plates: number, source: string, helper: string, dest: string, moves: string[][] = []) {
   if (plates <= 0) {
     return moves;
   }

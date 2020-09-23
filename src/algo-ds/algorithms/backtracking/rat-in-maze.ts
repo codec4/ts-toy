@@ -15,12 +15,7 @@ export function ratInAMaze(maze: Array<Array<number>>) {
   }
 }
 
-function findPath(
-  maze: Array<Array<number>>,
-  x: number,
-  y: number,
-  solution: Array<Array<number>>
-) {
+function findPath(maze: Array<Array<number>>, x: number, y: number, solution: Array<Array<number>>) {
   const n = maze.length;
   if (x === n - 1 && y === n - 1) {
     solution[x][y] = 1;

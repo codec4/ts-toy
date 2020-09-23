@@ -107,7 +107,7 @@ export const numbers = {
     for (let n = 1; n <= 10; n++) {
       yield n;
     }
-  },
+  }
 };
 
 type Reservation = {
@@ -120,26 +120,22 @@ type Reserve = {
   (from: Date, destination: string): Reservation;
 };
 
-export const reserve: Reserve = (
-  _: Date,
-  toOrDestination: Date | string,
-  destination?: string
-) => {
+export const reserve: Reserve = (_: Date, toOrDestination: Date | string, destination?: string) => {
   if (toOrDestination instanceof Date && destination !== undefined) {
     return {
       checkIn: 'fst',
-      checkOut: 'scd',
+      checkOut: 'scd'
     };
   } else if (typeof toOrDestination === 'string') {
     return {
       checkIn: 'fst',
-      checkOut: 'scd',
+      checkOut: 'scd'
     };
   }
 
   return {
     checkIn: 'fst',
-    checkOut: 'scd',
+    checkOut: 'scd'
   };
 };
 
@@ -179,13 +175,10 @@ type InnerNode = TreeNode & {
   children: [TreeNode] | [TreeNode, TreeNode];
 };
 
-export function mapNode<T extends TreeNode>(
-  node: T,
-  f: (value: string) => string
-): T {
+export function mapNode<T extends TreeNode>(node: T, f: (value: string) => string): T {
   return {
     ...node,
-    value: f(node.value),
+    value: f(node.value)
   };
 }
 
@@ -204,9 +197,7 @@ export const c1 = mapNode(c, (_) => _.toUpperCase()); // InnerNode
 type HasSides = { numberOfSides: number };
 type SidesHaveLength = { sideLength: number };
 
-export function logPerimeter<Shape extends HasSides & SidesHaveLength>(
-  s: Shape
-): Shape {
+export function logPerimeter<Shape extends HasSides & SidesHaveLength>(s: Shape): Shape {
   // console.log(s.numberOfSides * s.sideLength);
   return s;
 }
@@ -215,10 +206,7 @@ export function logPerimeter<Shape extends HasSides & SidesHaveLength>(
 // const square: Square = { numberOfSides: 4, sideLength: 3 };
 // logPerimeter(square); // Square, logs "12"
 
-export function call<T extends unknown[], R>(
-  f: (...args: T) => R,
-  ...args: T
-): R {
+export function call<T extends unknown[], R>(f: (...args: T) => R, ...args: T): R {
   return f(...args);
 }
 

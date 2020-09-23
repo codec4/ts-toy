@@ -4,7 +4,7 @@ import Queue from '../../data-structures/queue';
 enum Colors {
   WHITE = 0,
   GREY = 1,
-  BLACK = 2,
+  BLACK = 2
 }
 
 const initializeColor = (vertices: (string | number)[]) => {
@@ -15,11 +15,7 @@ const initializeColor = (vertices: (string | number)[]) => {
   return color;
 };
 
-export const breadthFirstSearch = (
-  graph: Graph,
-  startVertex: any,
-  callback: Function
-) => {
+export const breadthFirstSearch = (graph: Graph, startVertex: any, callback: Function) => {
   const vertices = graph.getVertices();
   const adjList = graph.getAdjList();
   const color = initializeColor(vertices);
@@ -77,6 +73,6 @@ export const bfs = (graph: Graph, startVertex: any) => {
 
   return {
     distances: distances,
-    predecessors: predecessors,
+    predecessors: predecessors
   };
 };

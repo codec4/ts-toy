@@ -36,12 +36,7 @@ export function lcs(wordX: string, wordY: string) {
   // return l[m][n];
 }
 
-function printSolution(
-  solution: Array<Array<string>>,
-  wordX: string,
-  m: number,
-  n: number
-) {
+function printSolution(solution: Array<Array<string>>, wordX: string, m: number, n: number) {
   let a = m;
   let b = n;
   let x = solution[a][b];

@@ -1,9 +1,4 @@
-export function knapSack(
-  capacity: number,
-  weights: number[],
-  values: number[],
-  n: number
-) {
+export function knapSack(capacity: number, weights: number[], values: number[], n: number) {
   const kS: Array<Array<number>> = [];
 
   for (let i = 0; i <= n; i++) {

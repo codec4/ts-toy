@@ -23,17 +23,21 @@ export default class LinkedList<T> {
 
       current.next = node;
     }
+
     this.count++;
   }
 
   getElementAt(index: number) {
     if (index >= 0 && index <= this.count) {
       let node = this.head;
+
       for (let i = 0; i < index && node != null; i++) {
         node = node.next;
       }
+
       return node;
     }
+
     return undefined;
   }
 
@@ -42,15 +46,16 @@ export default class LinkedList<T> {
       const node = new Node(element);
 
       if (index === 0) {
-        const current = this.head;
-        node.next = current;
+        node.next = this.head;
         this.head = node;
       } else {
         const previous = this.getElementAt(index - 1);
         node.next = previous.next;
         previous.next = node;
       }
+
       this.count++;
+
       return true;
     }
     return false;
@@ -67,14 +72,18 @@ export default class LinkedList<T> {
         current = previous.next;
         previous.next = current.next;
       }
+
       this.count--;
+
       return current.element;
     }
+
     return undefined;
   }
 
   remove(element: T) {
     const index = this.indexOf(element);
+
     return this.removeAt(index);
   }
 
@@ -85,6 +94,7 @@ export default class LinkedList<T> {
       if (this.equalsFn(element, current.element)) {
         return i;
       }
+
       current = current.next;
     }
 
@@ -112,12 +122,14 @@ export default class LinkedList<T> {
     if (this.head == null) {
       return '';
     }
+
     let objString = `${this.head.element}`;
     let current = this.head.next;
     for (let i = 1; i < this.size() && current != null; i++) {
       objString = `${objString},${current.element}`;
       current = current.next;
     }
+
     return objString;
   }
 }
