@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "target": "es2015",
-    "outDir": "build/src",
+    "outDir": "build",
     "moduleResolution": "node",
     "module": "CommonJS",
     "declaration": false,

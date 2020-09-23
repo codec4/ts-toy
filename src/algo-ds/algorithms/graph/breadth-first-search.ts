@@ -4,7 +4,7 @@ import Queue from '../../data-structures/queue';
 enum Colors {
   WHITE = 0,
   GREY = 1,
-  BLACK = 2,
+  BLACK = 2
 }
 
 const initializeColor = (vertices: (string | number)[]) => {
@@ -23,7 +23,7 @@ export const breadthFirstSearch = (
   const vertices = graph.getVertices();
   const adjList = graph.getAdjList();
   const color = initializeColor(vertices);
-  const queue = new Queue<any>();
+  const queue = new Queue();
 
   queue.enqueue(startVertex);
 
@@ -49,7 +49,7 @@ export const bfs = (graph: Graph, startVertex: any) => {
   const vertices = graph.getVertices();
   const adjList = graph.getAdjList();
   const color = initializeColor(vertices);
-  const queue = new Queue<any>();
+  const queue = new Queue();
   const distances: any = {};
   const predecessors: any = {};
   queue.enqueue(startVertex);
@@ -77,6 +77,6 @@ export const bfs = (graph: Graph, startVertex: any) => {
 
   return {
     distances: distances,
-    predecessors: predecessors,
+    predecessors: predecessors
   };
 };

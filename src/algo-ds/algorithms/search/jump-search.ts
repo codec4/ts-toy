@@ -2,7 +2,7 @@ import {
   defaultCompare,
   DOES_NOT_EXIST,
   ICompareFunction,
-  Compare,
+  Compare
 } from '../../util';
 
 export function jumpSearch<T>(

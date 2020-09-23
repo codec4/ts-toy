@@ -21,5 +21,5 @@ server.on('listening', () => {
 server.bind({
   address: HOST,
   port: PORT,
-  exclusive: true,
+  exclusive: true
 });

@@ -3,7 +3,7 @@ import Graph from '../../data-structures/graph';
 enum Colors {
   WHITE = 0,
   GREY = 1,
-  BLACK = 2,
+  BLACK = 2
 }
 
 const initializeColor = (vertices: (string | number)[]) => {
@@ -97,6 +97,6 @@ export const DFS = (graph: Graph) => {
   return {
     discovery: d,
     finished: f,
-    predecessors: p,
+    predecessors: p
   };
 };

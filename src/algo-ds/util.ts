@@ -9,7 +9,7 @@ export const DOES_NOT_EXIST = -1;
 export enum Compare {
   LESS_THAN = -1,
   BIGGER_THAN = 1,
-  EQUALS = 0,
+  EQUALS = 0
 }
 
 export function lesserEquals<T>(a: T, b: T, compareFn: ICompareFunction<T>) {

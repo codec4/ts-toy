@@ -1,17 +1,12 @@
-// FIFO
 export default class Queue<T> {
   private count: number;
   private lowestCount: number;
-  private items: Record<number, T>;
+  private items: any;
 
-  constructor(element?: T) {
+  constructor() {
     this.count = 0;
     this.lowestCount = 0;
     this.items = {};
-
-    if (element) {
-      this.enqueue(element);
-    }
   }
 
   enqueue(element: T) {
@@ -23,12 +18,9 @@ export default class Queue<T> {
     if (this.isEmpty()) {
       return undefined;
     }
-
     const result = this.items[this.lowestCount];
-
     delete this.items[this.lowestCount];
     this.lowestCount++;
-
     return result;
   }
 
@@ -36,7 +28,6 @@ export default class Queue<T> {
     if (this.isEmpty()) {
       return undefined;
     }
-
     return this.items[this.lowestCount];
   }
 
@@ -58,12 +49,10 @@ export default class Queue<T> {
     if (this.isEmpty()) {
       return '';
     }
-
     let objString = `${this.items[this.lowestCount]}`;
     for (let i = this.lowestCount + 1; i < this.count; i++) {
       objString = `${objString},${this.items[i]}`;
     }
-
     return objString;
   }
 }

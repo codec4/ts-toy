@@ -3,7 +3,7 @@ import {
   defaultCompare,
   defaultEquals,
   ICompareFunction,
-  IEqualsFunction,
+  IEqualsFunction
 } from '../util';
 import LinkedList from './linked-list';
 

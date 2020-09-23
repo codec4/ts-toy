@@ -1,6 +1,6 @@
 export default class Stack<T> {
   private count: number;
-  private items: Record<number, T>;
+  private items: any;
 
   constructor() {
     this.count = 0;
@@ -16,13 +16,9 @@ export default class Stack<T> {
     if (this.isEmpty()) {
       return undefined;
     }
-
     this.count--;
-
     const result = this.items[this.count];
-
     delete this.items[this.count];
-
     return result;
   }
 
@@ -30,7 +26,6 @@ export default class Stack<T> {
     if (this.isEmpty()) {
       return undefined;
     }
-
     return this.items[this.count - 1];
   }
 
@@ -55,13 +50,10 @@ export default class Stack<T> {
     if (this.isEmpty()) {
       return '';
     }
-
     let objString = `${this.items[0]}`;
-
     for (let i = 1; i < this.count; i++) {
       objString = `${objString},${this.items[i]}`;
     }
-
     return objString;
   }
 }

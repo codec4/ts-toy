@@ -17,6 +17,6 @@ export function hotPotato(elementsList: any[], num: number) {
 
   return {
     elimitated: elimitatedList,
-    winner: queue.dequeue(),
+    winner: queue.dequeue()
   };
 }

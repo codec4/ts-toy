@@ -107,7 +107,7 @@ export const numbers = {
     for (let n = 1; n <= 10; n++) {
       yield n;
     }
-  },
+  }
 };
 
 type Reservation = {
@@ -128,18 +128,18 @@ export const reserve: Reserve = (
   if (toOrDestination instanceof Date && destination !== undefined) {
     return {
       checkIn: 'fst',
-      checkOut: 'scd',
+      checkOut: 'scd'
     };
   } else if (typeof toOrDestination === 'string') {
     return {
       checkIn: 'fst',
-      checkOut: 'scd',
+      checkOut: 'scd'
     };
   }
 
   return {
     checkIn: 'fst',
-    checkOut: 'scd',
+    checkOut: 'scd'
   };
 };
 
@@ -185,7 +185,7 @@ export function mapNode<T extends TreeNode>(
 ): T {
   return {
     ...node,
-    value: f(node.value),
+    value: f(node.value)
   };
 }
 

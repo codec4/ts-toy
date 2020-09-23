@@ -3,7 +3,7 @@ import {
   defaultCompare,
   ICompareFunction,
   reverseCompare,
-  swap,
+  swap
 } from '../util';
 
 export class MinHeap<T> {

@@ -6,26 +6,24 @@ export function parenthesesChecker(symbols: string) {
   const closers = ')]}';
   let balanced = true;
   let index = 0;
+  let symbol: string;
+  let top: string;
 
   while (index < symbols.length && balanced) {
-    let symbol = symbols[index];
-
-    if (opens.includes(symbol)) {
+    symbol = symbols[index];
+    if (opens.indexOf(symbol) >= 0) {
       stack.push(symbol);
     } else {
       if (stack.isEmpty()) {
         balanced = false;
       } else {
-        let top = stack.pop();
-
+        top = stack.pop();
         if (!(opens.indexOf(top) === closers.indexOf(symbol))) {
           balanced = false;
         }
       }
     }
-
     index++;
   }
-
   return balanced && stack.isEmpty();
 }

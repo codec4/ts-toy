@@ -5,17 +5,17 @@
 //##############################################################################
 
 type Color = 'Black' | 'White';
-type File = 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G' | 'H';
+type Side = 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G' | 'H';
 type Rank = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
 
 // A set of coordinates for a piece
 class Position {
-  constructor(private file: File, private rank: Rank) {}
+  constructor(private file: Side, private rank: Rank) {}
 
   public distanceFrom(position: Position) {
     return {
       rank: Math.abs(position.rank - this.rank),
-      file: Math.abs(position.file.charCodeAt(0) - this.file.charCodeAt(0)),
+      file: Math.abs(position.file.charCodeAt(0) - this.file.charCodeAt(0))
     };
   }
 }
@@ -23,7 +23,7 @@ class Position {
 // A chess piece
 abstract class Piece {
   protected position: Position;
-  constructor(private readonly color: Color, file: File, rank: Rank) {
+  constructor(private readonly color: Color, file: Side, rank: Rank) {
     this.position = new Position(file, rank);
   }
 
@@ -56,7 +56,7 @@ class Game {
     return [
       // Kings
       new King('White', 'E', 1),
-      new King('Black', 'E', 8),
+      new King('Black', 'E', 8)
     ];
   }
 }
@@ -165,5 +165,5 @@ interface User {
 
 let a: User = {
   name: 'Ashley',
-  age: 30,
+  age: 30
 };
